@@ -5,19 +5,28 @@ let sec=0;
 let count=0;
 
 let timer=false;
-
+let startcount=0
 function start(){
-    count=0;
-     timer=true;
-   stopwatch();
+    if (startcount==0){
+        count=0;
+         timer=true;
+       stopwatch();
+        startcount=1
+    }
+    else {
+    document.getElementById("start").style.display = "none";
+  }
+    
     
 }
 function stop(){
     timer=false;
+    startcount=0
 
 }
 function reset(){
     timer=false;
+    startcount=0
     if(timer==false){
         hr=0;
         min=0;
